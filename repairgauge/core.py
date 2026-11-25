@@ -171,7 +171,8 @@ def _align_sd(n_base: np.ndarray, mask: np.ndarray, zooms, tol_mm: float) -> flo
 def _crop(mask: np.ndarray, pad: int = 4) -> tuple[slice, ...]:
     """Bounding box of ``mask`` with a margin. Everything outside it is never read."""
     box = ndi.find_objects(mask.astype(np.uint8))[0]
-    return tuple(slice(max(s.start - pad, 0), min(s.stop + pad, n)) for s, n in zip(box, mask.shape, strict=True))
+    return tuple(slice(max(s.start - pad, 0), min(s.stop + pad, n))
+                 for s, n in zip(box, mask.shape, strict=True))
 
 
 def measure(baseline, followup, lesions, nawm, zooms=(1.0, 1.0, 1.0),
@@ -222,7 +223,8 @@ def measure(baseline, followup, lesions, nawm, zooms=(1.0, 1.0, 1.0),
     for lesion_id, sl in enumerate(ndi.find_objects(labels), start=1):
         if sl is None:
             continue
-        big = tuple(slice(max(s.start - pad, 0), min(s.stop + pad, n)) for s, n in zip(sl, labels.shape, strict=True))
+        big = tuple(slice(max(s.start - pad, 0), min(s.stop + pad, n))
+                    for s, n in zip(sl, labels.shape, strict=True))
         mask = (labels[big] == lesion_id) & finite[big]
         n_vox = int(mask.sum())
         if n_vox == 0:
