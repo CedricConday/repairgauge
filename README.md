@@ -1,7 +1,5 @@
 # RepairGauge
 
-[![tests](https://github.com/CedricConday/repairgauge/actions/workflows/tests.yml/badge.svg)](https://github.com/CedricConday/repairgauge/actions/workflows/tests.yml)
-
 RepairGauge measures, lesion by lesion, whether a myelin-sensitive MRI value recovered
 between two scans of the same person. It also tests itself on known answers before you
 trust it.
@@ -55,7 +53,7 @@ Every threshold is in `repairgauge.core.Config` and on the command line.
 ## Install and use
 
 ```bash
-pip install git+https://github.com/CedricConday/repairgauge
+pip install repairgauge
 repairgauge run --baseline mtr_v1.nii.gz --followup mtr_v2.nii.gz \
     --lesions lesions_v1.nii.gz --wm wm_v1.nii.gz --out out/
 ```
@@ -79,7 +77,7 @@ The 1,500 mm³ lesions in that run, true recovery against measured: −0.50 → 
 
 The defaults were fixed on development data first: phantom seeds 100–102, plus real pairs
 from two subjects, sub-22449 and sub-24037. The numbers below come from seeds 0–4 and four
-other subjects. The method is in [docs/VALIDATION.md](docs/VALIDATION.md).
+other subjects. The method is in `docs/VALIDATION.md`.
 
 **Phantom**, 3,600 planted lesions (5 seeds × 3 noise levels × 4 shifts × 2 deficits × 30
 lesions):
