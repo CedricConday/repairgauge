@@ -44,7 +44,7 @@ COLUMNS = ["lesion_id", "n_voxels", "volume_mm3", "x", "y", "z_vox", "baseline",
 class Config:
     """Every threshold in one place. See docs/VALIDATION.md for how the defaults were fixed."""
 
-    reference_sigma_mm: float = 20.0  # width of the local NAWM reference; 0 = one global value
+    reference_sigma_mm: float = 10.0  # width of the local NAWM reference; 0 = one global value
     nawm_margin_mm: float = 2.0  # lesions are grown by this much before removal from NAWM
     wm_erode_mm: float = 1.0  # a white matter mask loses this rim (partial volume) to make NAWM
     n_null: int = 1000  # pseudo-lesions per lesion
