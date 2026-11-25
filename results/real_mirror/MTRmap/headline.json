@@ -1,0 +1,60 @@
+{
+  "version": "0.1.0",
+  "mode": "real pairs, OpenNeuro ds008825",
+  "subjects": [
+    "sub-24762",
+    "sub-60476",
+    "sub-60501",
+    "sub-60505"
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "deficits": [
+    0.0,
+    0.15,
+    0.3
+  ],
+  "lesion_shift_vox": 0.0,
+  "map": "MTRmap",
+  "config": {
+    "reference_sigma_mm": 10.0,
+    "nawm_margin_mm": 2.0,
+    "wm_erode_mm": 1.0,
+    "n_null": 1000,
+    "min_null": 100,
+    "null_min_coverage": 0.9,
+    "null_max_voxels": 4000,
+    "align_tol_mm": 0.3,
+    "z_threshold": 2.5,
+    "min_voxels": 10,
+    "min_deficit_ref": 3.0,
+    "min_deficit_floors": 4.0,
+    "seed": 0
+  },
+  "planted": {
+    "n_lesions": 1084,
+    "judged_share": 0.6826568265682657,
+    "recovery_mae_judged": 0.11471471509852134,
+    "recovery_bias_judged": 0.03278233081888962,
+    "false_repaired_at_zero": 0.00625,
+    "false_worsened_at_zero": 0.0,
+    "false_repaired_at_zero_judged": 0.0,
+    "false_worsened_at_zero_judged": 0.0,
+    "sensitivity_repaired_any_recovery": 0.7348066298342542,
+    "sensitivity_repaired_full_recovery": 0.9489795918367347,
+    "specificity_repaired": 0.9972222222222222,
+    "sensitivity_worsened": 0.775
+  },
+  "nothing_planted": {
+    "n_lesions": 542,
+    "called_repaired": 0.027675276752767528,
+    "called_worsened": 0.007380073800738007,
+    "called_any_change": 0.03505535055350553,
+    "flagged_share": 0.9981549815498155
+  }
+}
